@@ -1,5 +1,6 @@
 {
-{% for idx in range(MAX_ABSTRACT_NUM) %}
+{% set n = MAX_ABSTRACT_NUM if (articles|length) > MAX_ABSTRACT_NUM else (articles|length) %}
+{% for idx in range(n) %}
 {% set article = articles[idx] %}
 {{ "\"article%d\""|format(idx+1) }}: {
 "title": "{{ article.title }}",

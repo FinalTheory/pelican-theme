@@ -4,16 +4,22 @@
 <div class="col-md-6 col-md-offset-3">
     <h1><i class="fa fa-archive"></i>{{ NIUX2_ARCHIVE_UPDATEDATE_TRANSL | default("Archives (by updatedate)") }}</h1>
 	<div id="niu2-archives">
-	{% set allLists = [] %}
-	{% for article in articles_updatedate %}
-           {% if loop.first or article.updatedate.strftime('%Y %m') != articles_updatedate[loop.index0-1].updatedate.strftime('%Y %m') %}
-               {% set monthList = [] %}
-           {% endif %}
-           {% do monthList.append(article) %}
-           {% if loop.last or article.updatedate.strftime('%Y %m') != articles_updatedate[loop.index0+1].updatedate.strftime('%Y %m') %}
-               {% do allLists.append(monthList[:]) %}
-           {% endif %}
-       {% endfor %}
+{% set ns = namespace(allLists=[], monthList=[]) %}
+
+{% for article in articles_updatedate %}
+    {% if loop.first or article.updatedate.strftime('%Y %m') != articles_updatedate[loop.index0-1].updatedate.strftime('%Y %m') %}
+        {% set ns.monthList = [] %}
+    {% endif %}
+
+    {% do ns.monthList.append(article) %}
+
+    {% if loop.last or article.updatedate.strftime('%Y %m') != articles_updatedate[loop.index0+1].updatedate.strftime('%Y %m') %}
+        {% do ns.allLists.append(ns.monthList[:]) %}
+    {% endif %}
+{% endfor %}
+
+{% set allLists = ns.allLists %}
+
        
        <div class="panel">
        {% for monthArc in allLists %}

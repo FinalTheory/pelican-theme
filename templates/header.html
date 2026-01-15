@@ -12,6 +12,14 @@
     </div>
     <nav class="collapse navbar-collapse bs-navbar-collapse" role="navigation">
         <ul class="nav navbar-nav">
+        <li>
+            {% set current_lang = lang|default(DEFAULT_LANG) %}
+            {% if current_lang.startswith('en') %}
+                <a href="{{ SITEURL }}/../" title="中文"><i class="fa fa-language"></i>中文</a>
+            {% else %}
+                <a href="{{ SITEURL }}/en/" title="English"><i class="fa fa-language"></i>English</a>
+            {% endif %}
+        </li>
         {% if NIUX2_HEADER_SECTIONS %}
         {% for section in NIUX2_HEADER_SECTIONS %}
             <li><a href="{{ section[2] }}" title="{{ section[1] }}">
