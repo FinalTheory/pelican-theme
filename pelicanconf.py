@@ -72,6 +72,7 @@ I18N_SUBSITES = {
         "NIUX2_HEADER_SECTIONS": [
             ('Tags', 'Tags', '/en/tag/', 'fa-tags'),
             ('About Me', 'About Me', '/en/AboutMe_en.html', 'fa-anchor'),
+            ('Whistler', 'Whistler', '/whistler/', 'fa-globe'),
             ('Site Home', 'Site HomePage', 'http://finaltheory.me/', 'fa-sitemap'),
         ],
         "NIUX2_HEADER_DROPDOWN_SECTIONS": NIUX2_HEADER_DROPDOWN_SECTIONS_EN,
@@ -243,6 +244,7 @@ NIUX2_HEADER_SECTIONS = [
     ('标签', 'Tags', '/tag/', 'fa-tags'),
 #    ('项目', 'My Projects', '/MyProjects.html', 'fa-rocket'),
     ('关于我', 'About Me', '/AboutMe.html', 'fa-anchor'),
+    ('Whistler', 'Whistler', '/whistler/', 'fa-globe'),
     ('网站首页', 'Site HomePage', 'http://finaltheory.me/', 'fa-sitemap'),
 ]
 
@@ -261,7 +263,7 @@ NIUX2_FOOTER_ICONS = [
     ('fa-github', 'My Github Page', 'https://github.com/FinalTheory'),
     ('fa-instagram', 'My Instagram', 'https://www.instagram.com/yanhuang9421/'),
     ('fa-facebook-square', 'My Facebook Page', 'https://www.facebook.com/ForFinalTheory'),
-    ('fa-book', 'My RED Page', 'https://www.xiaohongshu.com/user/profile/5839b2e3a9b2ed428801e6c6'),
+#    ('fa-book', 'My RED Page', 'https://www.xiaohongshu.com/user/profile/5839b2e3a9b2ed428801e6c6'),
     ('fa-envelope-o', 'Send E-mail to Me', 'mailto: FinalTheory@hotmail.com'),
     ('fa-rss', 'Subscribe My Blog', '/feed.xml'),
 ]
